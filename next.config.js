@@ -1,6 +1,6 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
+const {withAliases} = require('./withAliases');
 
-module.exports = nextConfig
+/** @type {import('next').NextConfig} */
+const nextConfig = withAliases({reactStrictMode: true});
+
+module.exports = nextConfig;
