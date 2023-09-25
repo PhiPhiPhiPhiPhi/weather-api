@@ -4,9 +4,10 @@
 
 .nav {
     background-color: #fdc417;
-    padding: 1rem 0 1rem 0;
     color: #FFFFFF;
     justify-content: center;
+    padding: 1rem 0 1rem 0;
+    width: 100%;
 
     @include media-breakpoint-down(sm) {
         justify-content: flex-start;

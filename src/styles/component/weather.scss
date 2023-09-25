@@ -1,18 +1,25 @@
 .container {
-    > div {
+
+    .row {
         justify-content: center;
         align-items: center;
+        text-align: center;
 
-        > div {
-            text-align: center;
-
-            > .weather__status {
-                border-radius: 2rem;
-                box-shadow: 0 0 10px gray;
-                margin: 0 auto;
-                width: 80%;
-                padding: 2rem;
-            }
+        @include media-breakpoint-down(lg) {
+            gap: 2rem;
         }
+    }
+
+    .weather__status {
+        border-radius: 2rem;
+        box-shadow: 0 0 10px gray;
+        margin: 0 auto;
+        width: 100%;
+        padding: 2rem;
+    }
+
+    .weather__location {
+        width: 50%;
+        margin: 0 auto;
     }
 }

@@ -1,0 +1,25 @@
+.container {
+
+    .weather__text-image.reverse {
+            @include media-breakpoint-down(lg) {
+                border-radius: 2rem;
+                box-shadow: 0 0 10px gray;
+                flex-direction: column-reverse;
+                margin: 2rem 0;
+                gap: 1rem;
+            }
+    }
+
+    .weather__text-image {
+        @include media-breakpoint-down(lg) {
+            border-radius: 2rem;
+            box-shadow: 0 0 10px gray;
+            margin: 2rem 0;
+            gap: 1rem;
+        }
+    }
+
+    .weather__image{
+        max-width: 400px;
+    }
+}

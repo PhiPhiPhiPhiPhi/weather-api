@@ -1,46 +1,59 @@
-import {useEffect, useState} from 'react';
+import React, {createContext, useContext, useEffect, useState} from 'react';
 
+const weatherDataApiContext = createContext();
 
 /**
- * The Api Component.
+ * Export the WeatherApi so its useable for all component.
+ *
+ *@returns {any} Make the Api Call avaiable for all Component.
+ *
  */
-const WeatherApi = () => {
-    const [selected, setSelected] = useState([]);
+export const useWeatherDataApi = () => useContext(weatherDataApiContext);
 
-    const [weather, setWeather] = useState([]);
+/**
+ * The Api Call.
+ *
+ * @returns {any}              Make the Api Call.
+ * @param {any} props          The Props.
+ * @param {any} props.children The Props children.
+ */
+const WeatherApi = ({children}) => {
+    const [weatherData, setWeatherData] = useState(null);
+    const [city, setCity] = useState('Berlin');
+
 
     /**
-     * Get the Api Call.
+     * Update the City.
+     *
+     * @param {any} newCity Update the City.
      */
-    const fetchCityData = async () => {
-        try {
-            const response = await fetch('http://api.openweathermap.org/geo/1.0/direct?q=London,England,GB&appid=58b2a547f49cbf2ef16f3eca5e277ff8');
-            const data = await response.json();
-            const city = data[0].name;
-            const {state} = data[0];
-            const {country} = data[0];
-
-            const response2 = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city},${state},${country}&appid=58b2a547f49cbf2ef16f3eca5e277ff8`);
-            const data2 = await response2.json();
-            const {lat} = data2[0];
-            const {lon} = data2[0];
-
-            const response3 = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&lang=en&appid=58b2a547f49cbf2ef16f3eca5e277ff8`);
-            const data3 = await response3.json();
-
-            console.log(data3);
-
-            setSelected([data3.weather.name]);
-            setWeather([data3.weather[0].description]);
-        } catch (error) {
-            console.log('not found', error);
-        }
+    const updateCity = newCity => {
+        setCity(newCity);
     };
 
     useEffect(() => {
-        fetchCityData();
-    }, []);
-};
+        /**
+         * The Api Call of the City.
+         */
+        const fetchData = async () => {
+            try {
+                const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2b48dce7f68419400e1b64263095e240`);
+                const data = await response.json();
 
+                setWeatherData(data);
+            } catch (error) {
+                console.error('Error fetching weather data:', error);
+            }
+        };
+
+        fetchData();
+    }, [city]);
+
+    return (
+        <weatherDataApiContext.Provider value={weatherData}>
+            {children(updateCity)}
+        </weatherDataApiContext.Provider>
+    );
+};
 
 export default WeatherApi;

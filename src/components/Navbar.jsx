@@ -8,7 +8,7 @@ import React from 'react';
  */
 const Navbar = () => (
     <nav className="nav">
-        <h2>My Weather</h2>
+        <h2>My Weather App</h2>
     </nav>
 );
 
