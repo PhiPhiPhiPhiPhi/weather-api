@@ -18,4 +18,73 @@
             padding-left: 2rem;
         }
     }
+
+    &.ashy-weather,
+    &.clear-weather,
+    &.cloudy-weather,
+    &.drizzle-weather,
+    &.foggy-waether,
+    &.hazy-weather,
+    &.misty-weather,
+    &.rainy-weather,
+    &.smoky-weather,
+    &.snowy-weather,
+    &.squally-weather,
+    &.stormy-weather,
+    &.tornado-weather {
+        transition: background-color 0.3s ease;
+    }
+
+    &.ashy-weather {
+        background-color: #A9A9A9;
+    }
+
+    &.clear-weather {
+        background-color: #00BFFF;
+    }
+
+    &.cloudy-weather{
+        background-color: #777777;
+    }
+
+    &.drizzle-weather {
+        background-color: #6495ED;
+    }
+
+    &.foggy-waether {
+        background-color: #D2B48C;
+    }
+
+    &.hazy-weather {
+        background-color: #FFA500;
+    }
+
+    &.misty-weather {
+        background-color: #D3D3D3;
+    }
+
+    &.rainy-weather {
+        background-color: #4682B4;
+    }
+
+    &.smoky-weather {
+        background-color: #555555;
+    }
+
+    &.snowy-weather {
+        background-color: #FFFFFF;
+        color: #555555;
+    }
+
+    &.squally-weather {
+        background-color: #1E90FF;
+    }
+
+    &.stormy-weather {
+        background-color: #8B0000;
+    }
+
+    &.tornado-weather {
+        background-color: #663399;
+    }
 }

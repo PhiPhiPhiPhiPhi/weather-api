@@ -19,7 +19,7 @@ export const useWeatherDataApi = () => useContext(weatherDataApiContext);
  */
 const WeatherApi = ({children}) => {
     const [weatherData, setWeatherData] = useState(null);
-    const [city, setCity] = useState('Berlin');
+    const [city, setCity] = useState('London');
 
 
     /**
