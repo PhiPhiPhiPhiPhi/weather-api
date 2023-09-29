@@ -37,7 +37,7 @@ const WeatherApi = ({children}) => {
          */
         const fetchData = async () => {
             try {
-                const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2b48dce7f68419400e1b64263095e240`);
+                const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2b48dce7f68419400e1b64263095e240&units=metric`);
                 const data = await response.json();
 
                 setWeatherData(data);
