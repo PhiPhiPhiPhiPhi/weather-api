@@ -1,11 +1,9 @@
 import React from 'react';
 
-import Accessibility from 'Components/Accessibility';
 import Footer from 'Components/Footer';
+import Importance from 'Components/Importance';
 import Navbar from 'Components/Navbar';
-import Outdoor from 'Components/Outdoor';
-import Precision from 'Components/Precision';
-import Travel from 'Components/Travel';
+import Observation from 'Components/Observation';
 import Weather from 'Components/Weather';
 
 import WeatherApi from 'Utils/useWeather';
@@ -20,10 +18,8 @@ const Home = () => (
             <>
                 <Navbar />
                 <Weather updateCity={updateCity} />
-                <Accessibility />
-                <Precision />
-                <Outdoor />
-                <Travel />
+                <Observation />
+                <Importance />
                 <Footer />
             </>
         )}

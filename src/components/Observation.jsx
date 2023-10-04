@@ -13,14 +13,13 @@ const Accessibility = () => (
             <div className="col-lg-6 col-12">
                 <div className="weather-topic">
                     <h3>
-                        Accessibility and Convenience
+                        Observation
                     </h3>
                     <p>
-                        Weather apps provide immediate access to up-to-date weather information at your fingertips.
-                        You can check the forecast for your location or any
-                        other place in the world with just a few taps on your smartphone.
-                        This convenience saves time compared to traditional
-                        methods like watching the news or waiting for radio updates.
+                        Observing the daily weather is part of a regular routine for many of us,
+                        helping us decide what to wear and which activities we will do each day.
+                        Similar observations of atmospheric conditions are also required by meteorologists to develop
+                        those weather forecasts with which we are all familiar.
                     </p>
                 </div>
             </div>
